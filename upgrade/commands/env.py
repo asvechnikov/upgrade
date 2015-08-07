@@ -16,9 +16,24 @@
 
 from cliff import command as cmd
 
+from octane.commands import upgrade_env
+
+def clone_env(env_id):
+    upgrade_env.upgrade_env(env_id)
+    # TODO add work with plugins
+
 
 class CloneEnvCommand(cmd.Command):
     """ Clone Env and set specific settings for plugins. """
 
+    def get_parser(self, prog_name):
+        parser = super(CloneEnvCommand, self).get_parser(prog_name)
+        parser.add_argument(
+            "env",
+            type=int,
+            metavar='ENV_ID',
+            help='ID of environment to be upgraded')
+        return parser
+
     def take_action(self, parsed_args):
-        pass
+        clone_env(parsed_args.env)
