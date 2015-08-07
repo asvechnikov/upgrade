@@ -29,7 +29,7 @@ class UpgradeApp(app.App):
             **kwargs)
 
     def initialize_app(self, argv):
-        self.LOG.debug('initialize_app')
+        self.LOG.debug('initialize app')
 
     def prepare_to_run_command(self, cmd):
         self.LOG.debug('prepare to run command %s', cmd.__class__.__name__)
