@@ -24,6 +24,7 @@ class UpgradeApp(app.App):
     def __init__(self, **kwargs):
         super(UpgradeApp, self).__init__(
             description='Super upgrade script',
+            version='0.0.1',
             command_manager=cm.CommandManager('upgrade'),
             **kwargs)
 

@@ -21,4 +21,4 @@ class CloneEnvCommand(cmd.Command):
     """ Clone Env and set specific settings for plugins. """
 
     def take_action(self, parsed_args):
-        # do some actions
+        pass
